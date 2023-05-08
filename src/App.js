@@ -7,6 +7,7 @@ import Standings from "./components/Standings";
 import Fixture from "./components/Fixture";
 import Scorers from "./components/Scorers";
 import Team from "./components/Team";
+import Player from "./components/Player";
 import { useDispatch, useSelector } from "react-redux";
 import { getStandings, getFixture, getScorers, getYear } from "./store";
 import { Route, Routes, useNavigate } from "react-router-dom";
@@ -109,6 +110,7 @@ function App() {
           </div>
         } />
         <Route path="/team/:id" element={<Team league={league} />}/>
+        <Route path="/player/:id" element={<Player />}/>
       </Routes>
     </div>
   );

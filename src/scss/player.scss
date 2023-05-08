@@ -1,0 +1,43 @@
+.player {
+  padding: 1%;
+  .player-header {
+    display: flex;
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 20px;
+      h1 {
+        font-size: 2rem;
+        letter-spacing: -1px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+      }
+      table{
+        width: 300px;
+        table-layout: fixed;
+        tr th {
+          padding: 5px 10px;
+          background: #668cdf;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .player-body {
+    table {
+      width: 100%;
+      table-layout: fixed;
+      tr th {
+        width: 120px;
+        padding: 5px 10px;
+        background: #668cdf;
+        color: #fff;
+      }
+    }
+  }
+}

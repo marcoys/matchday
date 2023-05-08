@@ -15,6 +15,8 @@ function Fixture() {
     setTimeout(() => {
       let now = new Date();
       let day = now.toISOString();
+      let yesterday = new Date(now.setDate(now.getDate() - 1))
+      let newYesterday = yesterday.toISOString();
 
       setToday(day.slice(0, 10))
     }, 100)
