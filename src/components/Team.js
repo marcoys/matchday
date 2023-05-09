@@ -69,7 +69,7 @@ function Team({ league }) {
                 <div>D {teamStat.fixtures.draws.total} </div>
                 <div>L {teamStat.fixtures.loses.total} </div>
               </div>
-              <h3>최근 5경기 - {teamStat.form.slice(-5)}</h3>
+              <h3>최근 5경기 - ···{teamStat.form.slice(-5)}</h3>
             </div>
           </div>
           <div className='team-body'>

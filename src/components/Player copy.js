@@ -5,10 +5,12 @@ import { useParams } from 'react-router-dom';
 import Loading from "./Loading";
 import "../scss/player.scss"
 
-
-function Player({ id }) {
+function Player() {
   const [loading, setLoading] = useState(false);
   const [player, setPlayer] = useState('');
+
+
+  let {id} = useParams();
 
   let store = useSelector((state) => state);
 
@@ -32,14 +34,10 @@ function Player({ id }) {
 
   }, []);
 
+  if (loading) return <Loading />;
+
   return (
     <div className='player'>
-      {
-        loading ?
-          <Loading />
-        :
-        null
-      }
       {
         player ?
           <>
