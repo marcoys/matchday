@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import '../scss/teamplayers.scss';
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import Player from "./Player";
 
 
 function TeamPlayers({ teamPlayer }) {
   const [ fade, setFade ] = useState('fade_off'); 
   const [ modal, setModal ] = useState(false);
+  const [ modalFade, setModalFade ] = useState('');
   const [ id, setId ] = useState('');
 
   useEffect(() => {
@@ -15,10 +14,11 @@ function TeamPlayers({ teamPlayer }) {
   }, [])
 
   const ModalOpen = item => {
-    setModal(true);
-    setFade('fade_on');
     setId(item.id)
-    console.log(item.id);
+    setModal(!modal)
+    setTimeout(() => {
+      setModalFade('fade_on')
+    }, 200)
   }
   
   const ModalClose = () => {
@@ -30,8 +30,8 @@ function TeamPlayers({ teamPlayer }) {
       {
         modal ?
         <>
-          <div className={`bg-black ${fade}`} onClick={() => ModalClose()}></div>
-          <Player id={id} />
+          <div className={`bg-black ${modalFade}`} onClick={() => ModalClose()}></div>
+          <Player id={id} modalFade={modalFade} />
         </>
         :
         null

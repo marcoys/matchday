@@ -6,7 +6,7 @@ import Loading from "./Loading";
 import "../scss/player.scss"
 
 
-function Player({ id }) {
+function Player({ id, modalFade }) {
   const [loading, setLoading] = useState(false);
   const [player, setPlayer] = useState('');
 
@@ -33,7 +33,7 @@ function Player({ id }) {
   }, []);
 
   return (
-    <div className='player'>
+    <div className={`player ${modalFade}`}>
       {
         loading ?
           <Loading />

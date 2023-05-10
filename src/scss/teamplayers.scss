@@ -31,6 +31,7 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+  opacity: 0;
 }
 
 .fade_off {
@@ -39,5 +40,5 @@
 
 .fade_on {
   opacity: 1;
-  transition: opacity 1s;
+  transition: opacity 0.4s;
 }
