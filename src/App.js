@@ -75,7 +75,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <div className="title">
+        <div className="title" onClick={() => {navigate('/')}}>
           <img src={store.standingsData.logo} alt="" />
           <h1>{store.standingsData.name}</h1>
         </div>

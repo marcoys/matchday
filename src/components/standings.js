@@ -36,7 +36,7 @@ function Standings() {
               <tr key={index}>
                 <td>{item.rank}</td>
                 <th>
-                  <div onClick={() => {navigate(`/team/${item.team.id}`)}}>
+                  <div onClick={() => {navigate(`/team/${item.team.id}`)}} style={{ display: 'inline-block', cursor: 'pointer' }}>
                     <img src={item.team.logo} alt="" className="team_logo"/>
                     {item.team.name}
                   </div>

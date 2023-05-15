@@ -8,8 +8,17 @@
   z-index: 2;
   max-width: 800px;
   width: 100%;
+  cursor: pointer;
   .player-header {
     display: flex;
+    position: relative;
+    .modal_x {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+      font-size: 2rem;
+    }
     > div {
       display: flex;
       flex-direction: column;

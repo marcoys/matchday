@@ -3,10 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Loading from "./Loading";
-import "../scss/player.scss"
+import "../scss/player.scss";
+import { AiFillCloseCircle } from 'react-icons/ai';
 
 
-function Player({ id, modalFade }) {
+function Player({ id, modalFade, modalClose }) {
   const [loading, setLoading] = useState(false);
   const [player, setPlayer] = useState('');
 
@@ -36,7 +37,7 @@ function Player({ id, modalFade }) {
     <div className={`player ${modalFade}`}>
       {
         loading ?
-          <Loading />
+          <Loading modalFade={modalFade} />
         :
         null
       }
@@ -44,6 +45,9 @@ function Player({ id, modalFade }) {
         player ?
           <>
             <div className='player-header'>
+              <div className='modal_x'>
+                <AiFillCloseCircle onClick={modalClose} />
+              </div>
               <img src={player.player.photo} alt={player.player.name} style={{width: '170px'}}/>
               <div>
                 <div>

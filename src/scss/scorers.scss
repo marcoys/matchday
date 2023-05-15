@@ -1,23 +1,31 @@
+// table {
+//   border: 1px solid #cfcfcf;
+//   padding: 10px;
+//   box-sizing: border-box;
+//   border-radius: 5px;
+//   border-collapse: collapse;
+//   width: 49%;
+//   tr th {
+//     border: 1px solid #cfcfcf;
+//     text-align: left;
+//     vertical-align: middle;
+//   }
+//   tr td {
+//     border: 1px solid #cfcfcf;
+//     padding: 5px;
+//     text-align: center;
+//     vertical-align: middle;
+//   }
+//   .team_logo {
+//     width: 20px;
+//     height: 20px;
+//     vertical-align: middle;
+//     margin: 0 5px 0 10px;
+//   }
+// }
+
+@import '_mixing.scss';
+
 table {
-  border: 1px solid #cfcfcf;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 5px;
-  border-collapse: collapse;
-  width: 49%;
-  tr th {
-    border: 1px solid #cfcfcf;
-    text-align: left;
-  }
-  tr td {
-    border: 1px solid #cfcfcf;
-    padding: 5px;
-    text-align: center;
-  }
-  .team_logo {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    margin: 0 5px 0 10px;
-  }
+  @include table
 }

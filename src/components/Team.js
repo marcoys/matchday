@@ -5,11 +5,9 @@ import { useParams } from 'react-router-dom';
 import Loading from "./Loading";
 import "../scss/team.scss"
 import TeamPlayers from './TeamPlayers';
-import Player from './Player';
-import { Route, Routes, useNavigate } from "react-router-dom";
-
 
 function Team({ league }) {
+  const [ fade, setFade ] = useState('fade_off'); 
   const [loading, setLoading] = useState(false);
   const [ teamInfo, setTeamInfo ] = useState('');
   const [ teamStat, setTeamStat ] = useState('');
@@ -21,6 +19,7 @@ function Team({ league }) {
 
   useEffect(() => {
     setLoading(true);
+    setFade('fade_on')
 
     axios
       .all([
@@ -59,20 +58,24 @@ function Team({ league }) {
         teamInfo ?
         <div className='team-Info' >
           <div className='team-header'>
-            <img src={`${teamInfo.team.logo}`} alt="logo" />
-            <div>
-              <h1>{teamInfo.team.name}</h1>
-              <h2>{teamInfo.venue.name}</h2>
-              <div className='game'>
-                <div>G {teamStat.fixtures.played.total}</div>
-                <div>W {teamStat.fixtures.wins.total} </div>
-                <div>D {teamStat.fixtures.draws.total} </div>
-                <div>L {teamStat.fixtures.loses.total} </div>
+            <div className='team-logo-bg' style={{
+            backgroundImage: `url(${teamInfo.team.logo})`}}></div>
+            <div className='team-info-content'>
+              <img src={`${teamInfo.team.logo}`} alt="logo" />
+              <div>
+                <h1>{teamInfo.team.name}</h1>
+                <h2>{teamInfo.venue.name}</h2>
+                <div className='game'>
+                  <div>G {teamStat.fixtures.played.total}</div>
+                  <div>W {teamStat.fixtures.wins.total} </div>
+                  <div>D {teamStat.fixtures.draws.total} </div>
+                  <div>L {teamStat.fixtures.loses.total} </div>
+                </div>
+                <h3>최근 5경기 - ···{teamStat.form.slice(-5)}</h3>
               </div>
-              <h3>최근 5경기 - ···{teamStat.form.slice(-5)}</h3>
             </div>
           </div>
-          <div className='team-body'>
+          <div className={`team-body ${fade}`}>
             <TeamPlayers teamPlayer={teamPlayer} />
           </div>
         </div>

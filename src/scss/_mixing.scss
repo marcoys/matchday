@@ -1,4 +1,39 @@
 
 @mixin table {
-
+    border: 1px solid #cfcfcf;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border-collapse: collapse;
+    width: 49%;
+    thead {
+      background: rgb(81, 23, 97);
+      color: #fff;
+      font-weight: 600;
+      tr td {
+        padding: 10px;
+      }
+    }
+    tbody tr:hover {
+      background: rgb(199, 199, 199);
+      transition: ease 0.1s;
+    }
+    tr th {
+      border: 1px solid #cfcfcf;
+      text-align: left;
+      vertical-align: middle;
+    }
+    tr td {
+      border: 1px solid #cfcfcf;
+      padding: 5px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .team_logo {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin: 0 5px 0 10px;
+    }
+  @content
 }

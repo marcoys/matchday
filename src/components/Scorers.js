@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import '../scss/scorers.scss';
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Scorers() {
   const [ fade, setFade ] = useState(''); 
+
+  const navigate = useNavigate();
 
   let store = useSelector((state) => state.topScorersData);
 
@@ -33,8 +36,10 @@ function Scorers() {
                   {item.player.name}
                 </th>
                 <td style={{ textAlign: 'left', paddingLeft: '5px'}}>
-                  <img src={item.statistics[0].team.logo} alt="" className="team_logo"/>
-                  {item.statistics[0].team.name}
+                  <div onClick={() => {navigate(`/team/${item.statistics[0].team.id}`)}} style={{ display: 'inline-block', cursor: 'pointer' }}>
+                    <img src={item.statistics[0].team.logo} alt="" className="team_logo"/>
+                    {item.statistics[0].team.name}
+                  </div>
                 </td>
                 <td>
                   {item.statistics[0].games.appearences} 경기

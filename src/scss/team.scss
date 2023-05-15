@@ -2,29 +2,68 @@
   .team-Info {
     .team-header {
       display: flex;
-      > div {
+      padding: 5% 1%;
+      position: relative;
+      overflow: hidden;
+      position: relative;
+      .team-logo-bg {
+        display: block;
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        left: -17%;
+        top: -53%;
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-size: 20%;
+        background-position: center;
+        transform: rotate(355deg);
+        opacity: 0.3;
+        image-rendering: optimizeQuality;
+      }
+      .team-info-content {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
-      }
-      h1 {
-        font-size: 2rem;
-        font-weight: 600;
-        margin-bottom: 5px;
-      }
-      .game {
-        margin: 10px 0;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        > div {
-          border: 1px solid #000;
-          border-right: none;
-          box-sizing: border-box;
-          padding: 10px 8px;
+        & > div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding-left: 15px;
         }
-        > div:last-child {
-          border-right: 1px solid #000;
+        h1 {
+          font-size: 3rem;
+          font-weight: 600;
+          margin-bottom: 5px;
+        }
+        h2 {
+          font-size: 1.5rem;
+        }
+        .game {
+          margin: 10px 0;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          > div {
+            border: 1px solid #000;
+            border-right: none;
+            box-sizing: border-box;
+            padding: 10px 8px;
+            color: #fff;
+            &:nth-child(1) {
+              background: #3d185c;
+            }
+            &:nth-child(2) {
+              background: #1d7037;
+            }
+            &:nth-child(3) {
+              background: #585858;
+            }
+            &:last-child{
+              border-right: 1px solid #000;
+              background: #bc1b1b;
+            }
+          }
         }
       }
     }
