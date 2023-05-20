@@ -5,7 +5,7 @@
       padding: 5% 1%;
       position: relative;
       overflow: hidden;
-      position: relative;
+      border-bottom: 1px solid #cecece;
       .team-logo-bg {
         display: block;
         width: 200%;
@@ -15,9 +15,9 @@
         top: -53%;
         z-index: -1;
         background-repeat: no-repeat;
-        background-size: 20%;
+        background-size: 15%;
         background-position: center;
-        transform: rotate(355deg);
+        transform: rotate(345deg);
         opacity: 0.3;
         image-rendering: optimizeQuality;
       }

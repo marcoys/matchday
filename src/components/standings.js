@@ -18,7 +18,7 @@ function Standings() {
       <table className={'fade_off ' + fade}>
         <thead>
           <tr>
-            <td>순위</td>
+            <td style={{ width: '40px'}}>순위</td>
             <td>팀 이름</td>
             <td>경기수</td>
             <td>승</td>
@@ -34,8 +34,8 @@ function Standings() {
           [...store.standings[0]].map((item, index) => {
             return (
               <tr key={index}>
-                <td>{item.rank}</td>
-                <th>
+                <td style={{textAlign: "center"}}>{item.rank}</td>
+                <th style={{ textAlign: 'left'}}>
                   <div onClick={() => {navigate(`/team/${item.team.id}`)}} style={{ display: 'inline-block', cursor: 'pointer' }}>
                     <img src={item.team.logo} alt="" className="team_logo"/>
                     {item.team.name}

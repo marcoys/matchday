@@ -14,17 +14,19 @@ function TeamPlayers({ teamPlayer }) {
   }, [])
 
   const ModalOpen = item => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 200);
     setId(item.id)
     setModal(!modal)
     setTimeout(() => {
       setModalFade('fade_on')
     }, 200)
+    document.querySelector('body').style.overflow = 'hidden';
   }
   
   const ModalClose = () => {
     setModal(false);
     setModalFade('fade_off')
+    document.querySelector('body').style.overflow = 'initial';
   }
 
   return (
