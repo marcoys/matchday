@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/matchday/static/css/main.f47c6618.css",
+    "main.js": "/matchday/static/js/main.ca563c03.js",
+    "static/media/loading.gif": "/matchday/static/media/loading.2c0c17553f8db10e17fb.gif",
+    "static/media/logo.svg": "/matchday/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/matchday/index.html",
+    "main.f47c6618.css.map": "/matchday/static/css/main.f47c6618.css.map",
+    "main.ca563c03.js.map": "/matchday/static/js/main.ca563c03.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f47c6618.css",
+    "static/js/main.ca563c03.js"
+  ]
+}
