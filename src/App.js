@@ -100,7 +100,7 @@ function App() {
       
 
       <Routes>
-        <Route path="/" element={
+        <Route path="/matchday" element={
           <div className="container">
             <Fixture />
             <div className="table-box">
